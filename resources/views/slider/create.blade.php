@@ -105,7 +105,7 @@
                     <!--begin::Actions-->
                     <div class="card-footer d-flex justify-content-end py-6 px-9">
                         @csrf
-                        <button type="reset" class="btn btn-danger btn-active-light-primary me-2">Cancel</button>
+                        <a href="{{ route("admin.slider") }}" class="btn btn-danger btn-active-light-primary me-2">Cancel</a>
                         <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save</button>
                     </div>
                     <!--end::Actions-->
