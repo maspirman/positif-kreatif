@@ -5,74 +5,118 @@
 @endsection
 
 @section('content')
-    <!--begin::Entry-->
-    <div class="d-flex flex-column-fluid">
-        <!--begin::Container-->
-        <div class="container">
-            <!--begin::Card-->
-            <div class="card card-custom">
-                <div class="card-body p-0">
-                    <div class="wizard wizard-1" id="kt_projects_add" data-wizard-state="step-first" data-wizard-clickable="true">
-                        <!--begin::Wizard Body-->
-                        <div class="row justify-content-center my-10 px-8 my-lg-15 px-lg-10">
-                            <div class="col-xl-12 col-xxl-7">
-                                <!--begin::Form Wizard-->
-                                <form class="form" id="kt_projects_add_form" action="{{ route("admin.team-update", ["id" => $team->id]) }}" method="POST" enctype="multipart/form-data">
-                                    <!--begin::Step 1-->
-                                    <div class="pb-5" data-wizard-type="step-content" data-wizard-state="current">
-                                        <h3 class="mb-10 font-weight-bold text-dark">Service Details:</h3>
-                                        <div class="row">
-                                            <div class="col-xl-12">
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Name</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control form-control-lg form-control-solid" required name="name" type="text" value="{{ $team->name }}" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Position</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control form-control-lg form-control-solid" required name="position" type="text" value="{{ $team->position }}" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Jargon</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control form-control-lg form-control-solid" required name="jargon" type="text" value="{{ $team->jargon }}" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Image</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control form-control-solid" name="image" type="file" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end::Step 1-->
-                                    <!--begin::Actions-->
-                                    <div class="d-flex justify-content-between border-top mt-5 pt-10">
-                                        <div class="mr-2">
-                                        </div>
-                                        <div>
-                                            @csrf
-                                            @method("PUT")
-                                            <button type="submit" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4">Edit</button>
-                                        </div>
-                                    </div>
-                                    <!--end::Actions-->
-                                </form>
-                                <!--end::Form Wizard-->
-                            </div>
-                        </div>
-                        <!--end::Wizard Body-->
-                    </div>
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <!--begin::Container-->
+    <div class="container-xxl" id="kt_content_container">
+        <!--begin::Navbar-->
+
+        <!--end::Navbar-->
+        <!--begin::Basic info-->
+        <div class="card mb-5 mb-xl-10">
+            <!--begin::Card header-->
+            <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+                <!--begin::Card title-->
+                <div class="card-title m-0">
+                    <h3 class="fw-bolder m-0">Edit Team</h3>
                 </div>
+                <!--end::Card title-->
             </div>
-            <!--end::Card-->
+            <!--begin::Card header-->
+            <!--begin::Content-->
+            <div id="kt_account_profile_details" class="collapse show">
+                <!--begin::Form-->
+                <form id="kt_account_profile_details_form" class="form" method="POST" enctype="multipart/form-data" action="{{ route("admin.team-update", ["id" => $team->id]) }}">
+                    <!--begin::Card body-->
+                    <div class="card-body border-top p-9">
+                        <!--begin::Input group-->
+                        <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label fw-bold required fs-6">Image</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                                <!--begin::Image input-->
+                                <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: {{ asset("assets/media/avatars/blank.png")}}">
+                                    <!--begin::Preview existing avatar-->
+                                    <div class="image-input-wrapper w-400px h-400px" style="background-image: url('/storage/{{$team->image}}')"></div>
+                                    <!--end::Preview existing avatar-->
+                                    <!--begin::Label-->
+                                    <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change Image">
+                                        <i class="bi bi-pencil-fill fs-7"></i>
+                                        <!--begin::Inputs-->
+                                        <input type="file" name="image" accept=".png, .jpg, .jpeg" />
+                                        <input type="hidden" name="image" />
+                                        <!--end::Inputs-->
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Cancel-->
+                                    <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel Image">
+                                        <i class="bi bi-x fs-2"></i>
+                                    </span>
+                                    <!--end::Cancel-->
+                                    <!--begin::Remove-->
+                                    <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove Image">
+                                        <i class="bi bi-x fs-2"></i>
+                                    </span>
+                                    <!--end::Remove-->
+                                </div>
+                                <!--end::Image input-->
+                                <!--begin::Hint-->
+                                <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                <!--end::Hint-->
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Name</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                                <input type="text" name="name" class="form-control form-control-lg form-control-solid" placeholder="Name" required value="{{ $team->name }}" />
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Position</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                                <input type="text" name="position" class="form-control form-control-lg form-control-solid" placeholder="Position" required value="{{ $team->position }}" />
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Jargon</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                                <input type="text" name="jargon" class="form-control form-control-lg form-control-solid" placeholder="Jargon" required value="{{ $team->jargon }}" />
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                    <!--end::Card body-->
+                    <!--begin::Actions-->
+                    <div class="card-footer d-flex justify-content-end py-6 px-9">
+                        @csrf
+                        @method("PUT")
+                        <a href="{{ route("admin.slider") }}" class="btn btn-danger btn-active-light-primary me-2">Cancel</a>
+                        <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Edit</button>
+                    </div>
+                    <!--end::Actions-->
+                </form>
+                <!--end::Form-->
+            </div>
+            <!--end::Content-->
         </div>
-        <!--end::Container-->
+        <!--end::Basic info-->
     </div>
-    <!--end::Entry-->
+    <!--end::Container-->
+</div>
 @endsection

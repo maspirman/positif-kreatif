@@ -122,6 +122,14 @@
 											<span class="menu-title">Client</span>
 										</span>
 									</div>
+									<div class="menu-item menu-accordion">
+										<span class="menu-link" href="{{ route("admin.testimonial") }}">
+											<span class="menu-bullet">
+												<span class="bullet bullet-dot"></span>
+											</span>
+											<span class="menu-title">Testimonial</span>
+										</span>
+									</div>
 									
 								</div>
 							</div>
