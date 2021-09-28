@@ -5,98 +5,135 @@
 @endsection
 
 @section('content')
-    <!--begin::Entry-->
-    <div class="d-flex flex-column-fluid">
-        <!--begin::Container-->
-        <div class="container">
-            <!--begin::Card-->
-            <div class="card card-custom">
-                <div class="card-body p-0">
-                    <div class="wizard wizard-1" id="kt_projects_add" data-wizard-state="step-first" data-wizard-clickable="true">
-                        <!--begin::Wizard Body-->
-                        <div class="row justify-content-center my-10 px-8 my-lg-15 px-lg-10">
-                            <div class="col-xl-12 col-xxl-7">
-                                <!--begin::Form Wizard-->
-                                <form class="form" id="kt_projects_add_form" action="{{ route("admin.portofolio-update", ["id" => $portofolio->id]) }}" method="POST" enctype="multipart/form-data">
-                                    <!--begin::Step 1-->
-                                    <div class="pb-5" data-wizard-type="step-content" data-wizard-state="current">
-                                        <h3 class="mb-10 font-weight-bold text-dark">Service Details:</h3>
-                                        <div class="row">
-                                            <div class="col-xl-12">
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Judul</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control form-control-lg form-control-solid" required name="title" type="text" value="{{ $portofolio->title }}" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Kategori</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control form-control-lg form-control-solid" required name="category" type="text" value="{{ $portofolio->category }}" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Client</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control form-control-lg form-control-solid" required name="client" type="text" value="{{ $portofolio->client }}" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Date</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control form-control-lg form-control-solid" required name="date" type="date" value="{{ $portofolio->date }}" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Skills</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control form-control-lg form-control-solid" required name="skills" type="text" value="{{ $portofolio->skills }}" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Link</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control form-control-lg form-control-solid" required name="link" type="text" value="{{ $portofolio->link }}" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Decription</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <textarea class="form-control form-control-lg form-control-solid" required name="description" >{{ $portofolio->description }}</textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-lg-3 col-form-label">Image</label>
-                                                    <div class="col-lg-9 col-xl-9">
-                                                        <input class="form-control form-control-solid" name="image" type="file" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--end::Step 1-->
-                                    <!--begin::Actions-->
-                                    <div class="d-flex justify-content-between border-top mt-5 pt-10">
-                                        <div class="mr-2">
-                                        </div>
-                                        <div>
-                                            @csrf
-                                            @method("PUT")
-                                            <button type="submit" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4">Edit</button>
-                                        </div>
-                                    </div>
-                                    <!--end::Actions-->
-                                </form>
-                                <!--end::Form Wizard-->
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <!--begin::Container-->
+    <div class="container-xxl" id="kt_content_container">
+        <!--begin::Navbar-->
+
+        <!--end::Navbar-->
+        <!--begin::Basic info-->
+        <div class="card mb-5 mb-xl-10">
+            <!--begin::Card header-->
+            <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+                <!--begin::Card title-->
+                <div class="card-title m-0">
+                    <h3 class="fw-bolder m-0">Edit Portofolio</h3>
+                </div>
+                <!--end::Card title-->
+            </div>
+            <!--begin::Card header-->
+            <!--begin::Content-->
+            <div id="kt_account_profile_details" class="collapse show">
+                <!--begin::Form-->
+                <form id="kt_account_profile_details_form" class="form" method="POST" enctype="multipart/form-data" action="{{ route("admin.portofolio-update", ["id" => $portofolio->id]) }}">
+                    <!--begin::Card body-->
+                    <div class="card-body border-top p-9">
+                        <!--begin::Input group-->
+                        <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label fw-bold required fs-6">Image</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                                <!--begin::Image input-->
+                                <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url(assets/media/avatars/blank.png)">
+                                    <!--begin::Preview existing avatar-->
+                                    <div class="image-input-wrapper w-400px h-400px" style="background-image: url('/storage/{{$portofolio->image}}')"></div>
+                                    <!--end::Preview existing avatar-->
+                                    <!--begin::Label-->
+                                    <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change Image">
+                                        <i class="bi bi-pencil-fill fs-7"></i>
+                                        <!--begin::Inputs-->
+                                        <input type="file" name="image" accept=".png, .jpg, .jpeg" />
+                                        <input type="hidden" name="image" />
+                                        <!--end::Inputs-->
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Cancel-->
+                                    <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel Image">
+                                        <i class="bi bi-x fs-2"></i>
+                                    </span>
+                                    <!--end::Cancel-->
+                                    <!--begin::Remove-->
+                                    <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove Image">
+                                        <i class="bi bi-x fs-2"></i>
+                                    </span>
+                                    <!--end::Remove-->
+                                </div>
+                                <!--end::Image input-->
+                                <!--begin::Hint-->
+                                <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                <!--end::Hint-->
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="row mb-6">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Title</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                                <input type="text" name="title" class="form-control form-control-lg form-control-solid" placeholder="Title" required value="{{ $portofolio->title }}" />
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Category</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="text" name="category" class="form-control form-control-lg form-control-solid" placeholder="category" required value="{{ $portofolio->category }}" />
                             </div>
                         </div>
-                        <!--end::Wizard Body-->
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Client</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="text" name="client" class="form-control form-control-lg form-control-solid" placeholder="client" required value="{{ $portofolio->client }}" />
+                            </div>
+                        </div>
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Date</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="date" name="date" class="form-control form-control-lg form-control-solid" placeholder="date" required value="{{ $portofolio->date }}" />
+                            </div>
+                        </div>
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Skills</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="text" name="skills" class="form-control form-control-lg form-control-solid" placeholder="skills" required value="{{ $portofolio->skills }}" />
+                            </div>
+                        </div>
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Link</label>
+                            <div class="col-lg-8 fv-row">
+                                <input type="text" name="link" class="form-control form-control-lg form-control-solid" placeholder="link" required value="{{ $portofolio->link }}" />
+                            </div>
+                        </div>
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label required fw-bold fs-6">Description</label>
+                            <div class="col-lg-8 fv-row">
+                                <textarea name="description" id="" class="form-control form-control-lg form-control-solid" cols="30" rows="10" placeholder="description" required>{{ $portofolio->description }}</textarea>
+                                
+                            </div>
+                        </div>
+                        <!--end::Input group-->
                     </div>
-                </div>
+                    <!--end::Card body-->
+                    <!--begin::Actions-->
+                    <div class="card-footer d-flex justify-content-end py-6 px-9">
+                        @csrf
+                        @method("PUT")
+                        <a href="{{ route("admin.portofolio") }}" class="btn btn-danger btn-active-light-primary me-2">Cancel</a>
+                        <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Edit</button>
+                    </div>
+                    <!--end::Actions-->
+                </form>
+                <!--end::Form-->
             </div>
-            <!--end::Card-->
+            <!--end::Content-->
         </div>
-        <!--end::Container-->
+        <!--end::Basic info-->
     </div>
-    <!--end::Entry-->
+    <!--end::Container-->
+</div>
 @endsection
