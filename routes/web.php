@@ -105,3 +105,7 @@ Route::group(["middleware" => ["auth"]], function(){
 });
 
 Auth::routes();
+
+Route::get('/storage-link', function () {
+    Artisan::call('storage:link');
+});

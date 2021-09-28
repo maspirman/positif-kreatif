@@ -15,11 +15,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;0,700;1,500&display=swap');
 </style>
         <!-- Load css styles -->
-        <link rel="stylesheet" type="text/css" href="{{ asset("assets_public/css/bootstrap.css")}}" />
-        <link rel="stylesheet" type="text/css" href="{{ asset("assets_public/css/bootstrap-responsive.css")}}" />
-        <link rel="stylesheet" type="text/css" href="{{ asset("assets_public/css/style.css")}}" />
-        <link rel="stylesheet" type="text/css" href="{{ asset("assets_public/css/pluton.css")}}" />
-        <link rel="stylesheet" type="text/css" href="{{ asset("assets_public/chat.css")}}" />
+        <link rel="stylesheet" href="{{ asset("assets_public/css/bootstrap.css")}}" />
+        <link rel="stylesheet" href="{{ asset("assets_public/css/bootstrap-responsive.css")}}" />
+        <link rel="stylesheet" href="{{ asset("assets_public/css/style.css")}}" />
+        <link rel="stylesheet" href="{{ asset("assets_public/css/pluton.css")}}" />
+        <link rel="stylesheet" href="{{ asset("assets_public/chat.css")}}" />
         <!--[if IE 7]>
             <link rel="stylesheet" type="text/css" href="css/pluton-ie7.css" />
         <![endif]-->
