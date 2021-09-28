@@ -74,7 +74,7 @@
                             <div class="d-flex flex-column flex-grow-1 pe-8">
                                 <!--begin::Stats-->
                                 <div class="d-flex flex-wrap">
-                                    <p>Deskripsi</p>
+                                    <p>{{ $item->description }}</p>
                                 </div>
                                 <!--end::Stats-->
                             </div>
