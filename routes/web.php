@@ -93,7 +93,6 @@ Route::group(["middleware" => ["auth"]], function(){
     Route::get('/application/edit/{id}', 'ApplicationController@edit')->name("admin.application-edit");
     Route::delete('/application/{id}',   'ApplicationController@destroy')->name("admin.application-delete");
 
-    
     // client
     Route::get('/client',           'ClientController@index')->name("admin.client");
     Route::post('/client',          'ClientController@store')->name("admin.client-post");
@@ -102,6 +101,14 @@ Route::group(["middleware" => ["auth"]], function(){
     Route::get('/client/edit/{id}', 'ClientController@edit')->name("admin.client-edit");
     Route::delete('/client/{id}',   'ClientController@destroy')->name("admin.client-delete");
 
+    // subscriber
+    // Route::get('/client',           'ClientController@index')->name("admin.client");
+    Route::post('/subscriber',          'SubscriberController@store')->name("subscriber-post");
+    // Route::get('/client/create',    'ClientController@create')->name("admin.client-create");
+    // Route::put('/client/{id}',      'ClientController@update')->name("admin.client-update");
+    // Route::get('/client/edit/{id}', 'ClientController@edit')->name("admin.client-edit");
+    // Route::delete('/client/{id}',   'ClientController@destroy')->name("admin.client-delete");
+    
 });
 
 Auth::routes();

@@ -115,20 +115,20 @@
 										</a>
 									</div>
 									<div class="menu-item menu-accordion">
-										<span class="menu-link" href="{{ route("admin.client") }}">
+										<a class="menu-link" href="{{ route("admin.client") }}">
 											<span class="menu-bullet">
 												<span class="bullet bullet-dot"></span>
 											</span>
 											<span class="menu-title">Client</span>
-										</span>
+										</a>
 									</div>
 									<div class="menu-item menu-accordion">
-										<span class="menu-link" href="{{ route("admin.testimonial") }}">
+										<a class="menu-link" href="{{ route("admin.testimonial") }}">
 											<span class="menu-bullet">
 												<span class="bullet bullet-dot"></span>
 											</span>
 											<span class="menu-title">Testimonial</span>
-										</span>
+										</a>
 									</div>
 									
 								</div>
