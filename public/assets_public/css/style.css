@@ -1,8 +1,6 @@
 /*
  * A Design by GraphBerry
- * Author: GraphBerry
- * Author URL: http://graphberry.com
- * License: http://graphberry.com/pages/license
+ * Edited: Mas Ryu
  */
 
 /* Table of content
@@ -124,8 +122,6 @@ p {
     padding-top:0;
     background: transparent;
     margin-top:0;
-
-    min-height:70px;
     
 }
 
@@ -133,7 +129,7 @@ p {
     min-height:80px;
     height:60px;
     padding-top:0;
-    background: #f4ad00;
+    background: #fff;
 }
 .navbar-inner {
     background: transparent;
@@ -146,8 +142,13 @@ p {
     display: block;
 }
 .logo img{
-    width: 7%;
-    height:7%;
+    margin-left: -5rem;
+    border: block;
+    padding-top:10px; 
+    width: 20%;
+    height:15%;
+    outline-color: white;
+    outline-width: 10px;
 }
 .navbar .nav > li > a {
     background-color: #f4ad00;
@@ -1036,6 +1037,7 @@ icon-box .icon {
 @media (max-width: 979px) {
 
     .logo img{
+        margin-left: 1rem;
     width: 10%;
     height:10%;
 }
@@ -1105,9 +1107,19 @@ icon-box .icon {
     }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 500px) {
+    .thumbnails > li {
+    float: none;
+    margin-left: -10px;
+}
     .primary-section1{
-        margin-top:0;
+        margin-top:-35px;
+    }
+    .primary-section1 h1{
+        font-size: 18px;
+    }
+    .primary-section1 p{
+        font-size: 14px;
     }
     .info-mail {
         width:90%;
@@ -1119,9 +1131,280 @@ icon-box .icon {
     .price-column, .testimonial {
         margin-top:30px;
     }
-}
-@media (max-width: 483px) {
-    .primary-section1{
-        margin-top:0;
+    .secondary-section{
+        margin: 10px 10px 10px 10px;
+        font-size: 18px;
     }
+    .team .thumbnail {
+    left: 10px;
+    }
+    .sevice img{
+    width: 100px;
+    height: 100px;
+    }
+    .centered {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    text-align: center;
+    font-size: 18px;
+}
+
+.secondary-section {
+    font-size: 15px;
+}
+.project-description {
+    font-size: 14px;
+}
+.secondary-section h1 {
+   font-size: 19px;
+}
+.scrollup {
+    width: 29px;
+    height: 29px;
+
+}
+.chat-btn img{
+    width: 40px;
+    height: 40px;
+    padding-bottom: 10px;
+ }
+
+ .footer h4, h5 {
+    font-size: 12px;
+}
+.contact .social span {
+    width: 10%;
+    padding-bottom: 3px;
+}
+.footer > p {
+    font-size: 12px;
+}
+
+}
+@media (max-width: 352px) {
+    .thumbnails > li {
+    float: none;
+    margin-left: -10px;
+}
+    .primary-section1{
+        margin-top:-35px;
+    }
+    .primary-section1 h1{
+        font-size: 18px;
+    }
+    .primary-section1 p{
+        font-size: 14px;
+    }
+    .info-mail {
+        width:90%;
+        padding:15px 0px;
+    }
+    .project-description {
+        padding-left:20px;
+    }
+    .price-column, .testimonial {
+        margin-top:30px;
+    }
+    .secondary-section{
+        margin: 10px 10px 10px 10px;
+        font-size: 18px;
+    }
+    .team .thumbnail {
+    left: 10px;
+    }
+    .sevice img{
+    width: 100px;
+    height: 100px;
+    }
+    .centered {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    text-align: center;
+    font-size: 18px;
+}
+
+.secondary-section {
+    font-size: 15px;
+}
+.project-description {
+    font-size: 14px;
+}
+.secondary-section h1 {
+   font-size: 19px;
+}
+.scrollup {
+    width: 29px;
+    height: 29px;
+
+}
+.chat-btn img{
+    width: 40px;
+    height: 40px;
+    padding-bottom: 10px;
+ }
+
+ .footer h4, h5 {
+    font-size: 12px;
+}
+.contact .social span {
+    width: 10%;
+    padding-bottom: 3px;
+}
+.footer > p {
+    font-size: 12px;
+}
+
+}
+@media (max-width: 380px) {
+    .thumbnails > li {
+    float: none;
+    margin-left: -10px;
+}
+    .primary-section1{
+        margin-top:-35px;
+    }
+    .primary-section1 h1{
+        font-size: 18px;
+    }
+    .primary-section1 p{
+        font-size: 14px;
+    }
+    .info-mail {
+        width:90%;
+        padding:15px 0px;
+    }
+    .project-description {
+        padding-left:20px;
+    }
+    .price-column, .testimonial {
+        margin-top:30px;
+    }
+    .secondary-section{
+        margin: 10px 10px 10px 10px;
+        font-size: 18px;
+    }
+    .team .thumbnail {
+    left: 10px;
+    }
+    .sevice img{
+    width: 100px;
+    height: 100px;
+    }
+    .centered {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    text-align: center;
+    font-size: 18px;
+}
+
+.secondary-section {
+    font-size: 15px;
+}
+.project-description {
+    font-size: 14px;
+}
+.secondary-section h1 {
+   font-size: 19px;
+}
+.scrollup {
+    width: 29px;
+    height: 29px;
+
+}
+.chat-btn img{
+    width: 40px;
+    height: 40px;
+    padding-bottom: 10px;
+ }
+
+ .footer h4, h5 {
+    font-size: 12px;
+}
+.contact .social span {
+    width: 10%;
+    padding-bottom: 3px;
+}
+.footer > p {
+    font-size: 12px;
+}
+
+}
+
+@media (max-width: 325px) {
+    .thumbnails > li {
+    float: none;
+    margin-left: -10px;
+}
+    .primary-section1{
+        margin-top:-35px;
+    }
+    .primary-section1 h1{
+        font-size: 18px;
+    }
+    .primary-section1 p{
+        font-size: 14px;
+    }
+    .info-mail {
+        width:90%;
+        padding:15px 0px;
+    }
+    .project-description {
+        padding-left:20px;
+    }
+    .price-column, .testimonial {
+        margin-top:30px;
+    }
+    .secondary-section{
+        margin: 10px 10px 10px 10px;
+        font-size: 18px;
+    }
+    .team .thumbnail {
+    left: 10px;
+    }
+    .sevice img{
+    width: 100px;
+    height: 100px;
+    }
+    .centered {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    text-align: center;
+    font-size: 18px;
+}
+
+.secondary-section {
+    font-size: 15px;
+}
+.project-description {
+    font-size: 14px;
+}
+.secondary-section h1 {
+   font-size: 19px;
+}
+.scrollup {
+    width: 29px;
+    height: 29px;
+
+}
+.chat-btn img{
+    width: 40px;
+    height: 40px;
+    padding-bottom: 10px;
+ }
+
+ .footer h4, h5 {
+    font-size: 12px;
+}
+.contact .social span {
+    width: 10%;
+    padding-bottom: 3px;
+}
+.footer > p {
+    font-size: 12px;
+}
+
 }
