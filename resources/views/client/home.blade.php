@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <!--
  * A Design by GraphBerry
- * License: http://graphberry.com/pages/license
- * Editing By : Ahmad Firmanda Himawan
+ * Editing By : Mas Ryu
 -->
 <html lang="en">
     
     <head>
         <meta charset=utf-8>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PositifKreatif.id | Insert Your Tagline</title>
-        <!-- Load Roboto font -->
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;0,700;1,500&display=swap');
-        </style>
+        <title>PositifKreatif.id | Your Digital Partner</title>
+        <!-- Load Poppins font -->
+       <link href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700" rel="stylesheet">
         <!-- Load css styles -->
         <link rel="stylesheet" href="{{ asset("assets_public/css/bootstrap.css")}}" />
         <link rel="stylesheet" href="{{ asset("assets_public/css/bootstrap-responsive.css")}}" />
@@ -27,9 +24,9 @@
          <link rel="stylesheet" type="text/css" href="{{ asset("assets_public/css/sidebar-update.css")}}" />
         <link rel="stylesheet" type="text/css" href="{{ asset("assets_public/css/jquery.bxslider.css")}}" />
         <link rel="stylesheet" type="text/css" href="{{ asset("assets_public/css/animate.css")}}" />
-        <link href="{{ asset("assets_public/vendor/bootstrap-icons/bootstrap-icons.css")}}" rel="stylesheet">
-        <link href="{{ asset("assets_public/vendor/glightbox/css/glightbox.min.css")}}" rel="stylesheet">
-        <link href="{{ asset("assets_public/vendor/swiper/swiper-bundle.min.css")}}" rel="stylesheet">
+         <link href="{{ asset("assets_public/vendor/bootstrap-icons/bootstrap-icons.css")}}" rel="stylesheet">
+  <link href="{{ asset("assets_public/vendor/glightbox/css/glightbox.min.css")}}" rel="stylesheet">
+  <link href="{{ asset("assets_public/vendor/swiper/swiper-bundle.min.css")}}" rel="stylesheet">
         <!-- Fav and touch icons -->
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset("assets_public/images/ico/apple-touch-icon-144.png")}}">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset("assets_public/images/ico/apple-touch-icon-114.png")}}">
@@ -183,7 +180,7 @@
 
                 <div class="about-text centered">
                     <h1>Tentang Kami</h1>
-                    <p>{{$about_us->description ?? ""}}</p>
+                    <p>{{$about_us->description}}</p>
                 </div>
                 <div class="row-fluid">
                     <div class="span6">
@@ -503,10 +500,9 @@
                         <p>Untuk mendapatkan update terbaru dari kami silahkan berlangganan.</p>
                     </div>
                     <div class="span7">
-                        <form class="inline-form" method="POST" action="{{ route("subscriber-post") }}">
-                            <input type="email" name="email" class="span8" placeholder="Enter your email" required />
-                            <button type="submit" class="button button-sp">Berlangganan</button>
-                            @csrf
+                        <form class="inline-form">
+                            <input type="email" name="email" id="nlmail" class="span8" placeholder="Enter your email" required />
+                            <button id="subscribe" class="button button-sp">Berlangganan</button>
                         </form>
                         <div id="err-subscribe" class="error centered">Masukkan Email Yang Valid.</div>
                     </div>
@@ -566,12 +562,12 @@
 
                 <div class="footer">
                   <a href="#" class="brand">
-                        {{-- <img src="{{ asset("assets_public/images/$logo->value")}}" width="15%" alt="Logo" /> --}}
+                        <img src="{{ asset("assets_public/images/$logo->value")}}" width="15%" alt="Logo" />
                         <!-- This is website logo -->
                     </a>
-                    <h4 style="color: white;" >{{ $address->value ?? "" }}</h4>
-                    <h5 style="color: white;">Telp :{{ $phone->value ?? "" }} <br>
-                    Email : {{ $email->value ?? "" }}</h5>
+                    <h4 style="color: white;" >{{ $address->value }}</h4>
+                    <h5 style="color: white;">Telp :{{ $phone->value }} <br>
+                    Email : {{ $email->value }}</h5>
                     
                     <div class="row-fluid centered">
                         <ul class="social">
